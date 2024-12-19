@@ -1,25 +1,25 @@
-const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-const header = document.querySelector('.header.container');
+// Theme Toggle Script
+const themeToggle = document.getElementById('theme-toggle');
 
-hamburger.addEventListener('click', () => {
-	hamburger.classList.toggle('active');
-	mobile_menu.classList.toggle('active');
+themeToggle.addEventListener('click', () => {
+const currentTheme = document.documentElement.getAttribute('data-theme');
+const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+document.documentElement.setAttribute('data-theme', newTheme);
+
+themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
 });
 
-document.addEventListener('scroll', () => {
-	var scroll_position = window.scrollY;
-	if (scroll_position > 250) {
-		header.style.backgroundColor = '#29323c';
-	} else {
-		header.style.backgroundColor = 'transparent';
-	}
-});
+// Typewriter Effect
+const typewriterText = document.querySelector('.typewriter-text');
+const text = "I build efficient, scalable web applications!";
+let index = 0;
 
-menu_item.forEach((item) => {
-	item.addEventListener('click', () => {
-		hamburger.classList.toggle('active');
-		mobile_menu.classList.toggle('active');
-	});
-});
+function typeWriter() {
+if (index < text.length) {
+typewriterText.innerHTML += text.charAt(index);
+index++;
+setTimeout(typeWriter, 100);
+}
+}
+
+typeWriter();

@@ -1,116 +1,239 @@
-
-/* styles.css */
+/* Reset and global styles */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+font-family: 'Arial', sans-serif;
+background-color: #222; /* Dark background for portfolio */
+color: white;
+margin: 0;
+padding: 0;
+text-align: center;
 }
 
-header {
-    background-image: url(background.jpg);
-    background-size: cover;
-    color: rgb(12, 1, 1);
-    text-align: center;
-    padding: 50px;
+/* Header Section */
+.header {
+background: rgba(37, 42, 60, 0.6);
+padding: 50px;
+border-bottom: 4px solid #ff0066;
+transition: background 0.5s ease-in-out;
 }
 
-h1 {
-    
-    margin: 0;
+.header h1 {
+font-size: 4rem;
+font-weight: bold;
+letter-spacing: 2px;
+color: #fff;
+text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-section {
-    background-image: url(background.jpg);
-    background-size: cover;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #0c0c0c;
+.header p {
+font-size: 1.5rem;
+color: #ffcc00;
 }
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 1px;
-  }
-  
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-  .row {
-    display: flex;
-  }
-  
-  .column {
-    flex: 33.33%;
-    padding: 5px;
-  }
+
+.profile-pic {
+border-radius: 50%;
+width: 200px;
+height: 200px;
+margin-top: 20px;
+border: 5px solid white;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+transition: transform 0.5s ease;
+}
+
+.profile-pic:hover {
+transform: scale(1.1);
+}
+
+/* Section Styling */
+.section {
+background: rgba(0, 0, 0, 0.7);
+margin: 30px auto;
+padding: 40px;
+border-radius: 10px;
+max-width: 80%;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+}
+
+.section:hover {
+transform: scale(1.02);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+h2 {
+font-size: 2.5rem;
+color: #ffcc00;
+margin-bottom: 20px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
 
 ul {
-    list-style-type: none;
-    padding: 0;
+list-style-type: none;
+font-size: 1.2rem;
+margin: 20px 0;
 }
 
 li {
-    margin-bottom: 5px;
+margin: 10px 0;
 }
 
-#contact {
-    background-color: #f9f9f9;
-    padding: 20px;
+/* Project and Certificates Images */
+.certificates img,
+.project img {
+width: 100%;
+height: auto;
+border-radius: 10px;
+transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
+margin-bottom: 20px;
 }
 
-#contact h2 {
-    color: #333;
+.certificates img:hover,
+.project img:hover {
+transform: scale(1.05);
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
+/* Certificates Section Styling */
+#certificates {
+background-color: #333; /* Darker background for certificates section */
+padding: 40px;
+margin-top: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Heading Style for Certificates */
+#certificates h2 {
+font-size: 2.5rem;
+color: #ffcc00; /* Bright color for heading */
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 20px;
+}
+
+/* Certificate Image Styling */
+.certificate-img {
+width: 100%; /* Make the images take full width of the column */
+max-width: 350px; /* Limit the maximum size */
+height: auto;
+border-radius: 8px;
+transition: transform 0.4s ease, box-shadow 0.4s ease;
+margin-bottom: 20px;
+}
+
+.certificate-img:hover {
+transform: scale(1.05); /* Slight zoom effect on hover */
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Columns Layout for Certificates */
+.row {
+display: flex;
+justify-content: space-around;
+flex-wrap: wrap;
+}
+
+.column {
+flex: 1 1 30%;
+margin: 10px;
+padding: 10px;
+}
+
+/* Form Styling */
 form {
-    max-width: 400px;
-    margin: 0 auto;
+display: flex;
+flex-direction: column;
+gap: 15px;
+max-width: 400px;
+margin: 0 auto;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #333;
-}
-
-input[type="text"],
-input[type="email"],
+input,
 textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
+padding: 12px;
+border-radius: 6px;
+border: none;
+font-size: 1.1rem;
+transition: background-color 0.3s ease;
 }
 
-textarea {
-    resize: vertical;
-    min-height: 100px;
+input:focus,
+textarea:focus {
+background-color: #ffcc00;
+outline: none;
 }
 
-button[type="submit"] {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+button {
+background: linear-gradient(45deg, #ff0066, #6600cc);
+color: white;
+padding: 14px;
+border-radius: 6px;
+border: none;
+font-size: 1.1rem;
+cursor: pointer;
+transition: transform 0.3s ease, background 0.5s ease;
 }
 
-button[type="submit"]:hover {
-    background-color: #555;
+button:hover {
+transform: scale(1.05);
+background: linear-gradient(45deg, #6600cc, #ff0066);
 }
 
+/* Footer Styling */
 footer {
-    background-color: #fffafa;
-    color: rgb(10, 10, 10);
-    text-align: center;
-    padding: 10px;
+background-color: #222;
+padding: 20px;
+color: #fff;
 }
+
+footer p {
+font-size: 1.2rem;
+}
+
+/* Keyframe for background gradient animation */
+@keyframes gradient {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+/* Social Media Section Styling */
+#connect {
+background-color: #222;
+padding: 40px 0;
+text-align: center;
+}
+
+#connect h2 {
+font-size: 2rem;
+color: #ffcc00;
+margin-bottom: 20px;
+}
+
+.social-links {
+display: flex;
+justify-content: center;
+gap: 20px;
+}
+
+.social-link {
+color: #ffcc00;
+font-size: 1.5rem;
+text-decoration: none;
+transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+color: #ff0066;
+transform: scale(1.1);
+}
+
+.social-link:active {
+transform: scale(0.9);
+}
+
