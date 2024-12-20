@@ -1,4 +1,4 @@
-# 🌟 My Portfolio Website 🌟
+# 🌟 Portfolio Website 🌟
 Welcome to my personal portfolio repository! This website showcases my skills, projects, and achievements as a front-end developer. It is designed to demonstrate my proficiency in HTML, CSS, JavaScript, and various front-end frameworks. 🚀
 # 🛠️ Features
 * Responsive Design 📱💻: Optimized for mobile and desktop devices, ensuring a seamless experience.
